@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laba7.4", "Laba7.4.csproj", "{8DB40351-6AE0-4791-BF36-26C32F35BAD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix", "..\Matrix\Matrix.csproj", "{412A4AC7-B778-4C96-B79B-D5CC7D21C17D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DB40351-6AE0-4791-BF36-26C32F35BAD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB40351-6AE0-4791-BF36-26C32F35BAD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB40351-6AE0-4791-BF36-26C32F35BAD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB40351-6AE0-4791-BF36-26C32F35BAD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{412A4AC7-B778-4C96-B79B-D5CC7D21C17D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{412A4AC7-B778-4C96-B79B-D5CC7D21C17D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{412A4AC7-B778-4C96-B79B-D5CC7D21C17D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{412A4AC7-B778-4C96-B79B-D5CC7D21C17D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C46A9B24-4FB7-4590-B23F-216FC464DB67}
+	EndGlobalSection
+EndGlobal
