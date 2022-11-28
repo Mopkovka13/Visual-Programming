@@ -10,7 +10,7 @@ namespace Lab5._7
         public delegate void Win();
         public event Win win;
         PictureBox[,] buttons;
-        public int level = 20;
+        public int level = 100;
         enum Swap
         {
             Up = 0,

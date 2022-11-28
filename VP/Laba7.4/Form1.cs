@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Laba7._4
@@ -15,9 +16,12 @@ namespace Laba7._4
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
 
+            list.Add(new Matrix3x3(new double[,] { { 1, 2, 3 }, { 3, 2, 1 }, { 2, 3, 2 } }));
+            list.Add(new Matrix3x3(new double[,] { { 1, 2, 3 }, { 3, 2, 1 }, { 2, 3, 2 } }));
+            list.Add(new Matrix3x3(new double[,] { { 1, 2, 3 }, { 3, 2, 1 }, { 2, 3, 2 } }));
             list.Add(new Matrix3x3(new double[,] { { 1, 2, 3 }, { 3, 2, 1 }, { 2, 3, 2 } }));
             list.Add(new Matrix3x3(new double[,] { { 1, 2, 3 }, { 3, 2, 1 }, { 2, 3, 2 } }));
             list.Add(new Matrix3x3(new double[,] { { 1, 5, 6 }, { 1, 3, 2 }, { 4, 6, 4 } }));
@@ -33,19 +37,43 @@ namespace Laba7._4
             list.Add(new Matrix3x3(true));
             list.Add(new Matrix3x3(true));
             list.Add(new Matrix3x3(true));
-            refreshTable(list);
+            list.Add(new Matrix3x3(new double[,] { { 1, 5, 18 }, { 2, 3, 2 }, { 7, 6, 4 } }));
+            list.Add(new Matrix3x3(new double[,] { { 1, 12, 36 }, { 4, 3, 2 }, { 4, 17, 4 } }));
+            list.Add(new Matrix3x3(new double[,] { { 1, 5, 2 }, { 1, 3, 2 }, { 17, 6, 4 } }));
+            list.Add(new Matrix3x3(true));
+            list.Add(new Matrix3x3(true));
+            list.Add(new Matrix3x3(true));
+            list.Add(new Matrix3x3(true));
+            list.Add(new Matrix3x3(true));
+            list.Add(new Matrix3x3(true));
+            list.Add(new Matrix3x3(true));
+            list.Add(new Matrix3x3(true));
+            list.Add(new Matrix3x3(new double[,] { { 1, 5, 18 }, { 2, 3, 2 }, { 7, 6, 4 } }));
+            list.Add(new Matrix3x3(new double[,] { { 1, 12, 36 }, { 4, 3, 2 }, { 4, 17, 4 } }));
+            list.Add(new Matrix3x3(new double[,] { { 1, 5, 2 }, { 1, 3, 2 }, { 17, 6, 4 } }));
+            list.Add(new Matrix3x3(true));
+            list.Add(new Matrix3x3(true));
+            list.Add(new Matrix3x3(true));
+            list.Add(new Matrix3x3(true));
+            list.Add(new Matrix3x3(true));
+            list.Add(new Matrix3x3(true));
+            list.Add(new Matrix3x3(true));
+            list.Add(new Matrix3x3(true));
+
+            await refreshTable(list);
         }
 
-        private void refreshTable(List<Matrix3x3> ListMatrix)
+        private Task refreshTable(List<Matrix3x3> ListMatrix)
         {
             table.Controls.Clear();
             foreach (var item in ListMatrix)
             {
                 table.Controls.Add(item);
             }
+            return Task.CompletedTask;
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        private async void btnCreate_Click(object sender, EventArgs e)
         {
             CreateMatrix createMatrix = new CreateMatrix();
             createMatrix.ShowDialog();
@@ -53,19 +81,19 @@ namespace Laba7._4
             {
                 list.Add(new Matrix3x3(createMatrix.GetCreateMatrix()));
             }
-            refreshTable(list);
+            await refreshTable(list);
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private async void btnDelete_Click(object sender, EventArgs e)
         {
             foreach(var item in list)
             {
                 list = list.Where(x => x.IsChose == false).ToList();
             }
-            refreshTable(list);
+            await refreshTable(list);
         }
 
-        private void btnApply_Click(object sender, EventArgs e)
+        private async void btnApply_Click(object sender, EventArgs e)
         {
             IEnumerable<Matrix3x3> result = list;
             if(rbDuplicateFalse.Checked) // Дубликаты
@@ -129,7 +157,7 @@ namespace Laba7._4
             }
             
 
-            refreshTable(result.ToList());
+            await refreshTable(result.ToList());
         }
 
         private void checkBoxFilter_CheckedChanged(object sender, EventArgs e)

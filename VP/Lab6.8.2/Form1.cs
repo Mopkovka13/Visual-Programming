@@ -15,5 +15,10 @@ namespace Lab6._8._2
         {
 
         }
+
+        private void button1_Click_1(object sender, System.EventArgs e)
+        {
+            MessageBox.Show("Привет");
+        }
     }
 }
