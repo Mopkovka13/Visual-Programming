@@ -1,1 +1,1 @@
-# Visual-Programming
+Name: Lab{Номер лабы}.{Номер варианта}
